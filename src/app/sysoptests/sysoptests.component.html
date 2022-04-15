@@ -1,0 +1,37 @@
+<div class="container-fluid background">
+  <div class="col-12 d-flex justify-content-center">
+    <h1>Sysops Practice test</h1>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-2 d-flex justify-content-center">
+      <button (click)="onLeftArrowClick()" id="arrow-left" class="arrow-left">
+        <i class="fa fa-arrow-left"></i>
+      </button>
+    </div>
+    <div class="col-8 d-flex justify-content-center">
+      <div class="card row-1-card">
+        <div class="card__face card__face--front">
+          <p class="card-title">{{ currentQuestion.question }}</p>
+          <div class="answers" *ngFor="let answer of currentQuestion.answers">
+            <p>{{ answer }}</p>
+          </div>
+        </div>
+        <div class="card__face card__face--back">
+          <p class="card-back-para">
+            {{ currentQuestion.correct }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-2 d-flex justify-content-center align-items-center">
+      <button
+        (click)="onRightArrowClick()"
+        id="arrow-right"
+        class="arrow-right"
+      >
+        <i class="fa fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
