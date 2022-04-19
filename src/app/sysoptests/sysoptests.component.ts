@@ -18,9 +18,9 @@ export class SysoptestsComponent implements OnInit {
   ngOnInit(): void {
     var card = document.querySelectorAll('.card');
     card.forEach(card => card.addEventListener('click', () =>{  card.classList.toggle('is-flipped')}));
-    this.activatedRoute.paramMap.subscribe( params =>{
+    this.activatedRoute.paramMap.subscribe( async params =>{
        this.testNum = params.get('testnumber');
-       this.TestService.getTest(this.testNum).subscribe((res : any) => {
+       (await this.TestService.getTest(this.testNum)).subscribe((res : any) => {
         this.currentQuestion = res['questions'][0];
         this.questions = res['questions']
         console.log(this.questions)

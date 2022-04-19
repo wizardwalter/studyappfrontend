@@ -11,7 +11,7 @@ export class TestService {
   //baseUrl = 'http://localhost:8080'
   baseUrl = 'https://waltersstudyappbackend.herokuapp.com'
 
-  getTest(id: any){
-    return this.http.get(this.baseUrl + '/questions/awssysops/' + id);
+  async getTest(id: any){
+    return await this.http.get(this.baseUrl + '/questions/awssysops/' + id);
   };
 }
